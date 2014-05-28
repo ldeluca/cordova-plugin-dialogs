@@ -19,9 +19,9 @@
 
 # org.apache.cordova.dialogs
 
-這個外掛程式提供了對一些本機對話方塊的使用者介面元素的訪問。
+这个插件提供了对一些本机对话框的用户界面元素的访问。
 
-## 安裝
+## 安装
 
     cordova plugin add org.apache.cordova.dialogs
     
@@ -35,18 +35,18 @@
 
 ## navigator.notification.alert
 
-顯示一個自訂的警報或對話方塊框。 大多數科爾多瓦實現使用本機對話方塊中的此項功能，但一些平臺使用瀏覽器的 `alert` 函數，這是通常不那麼可自訂。
+显示一个自定义的警报或对话框框。 大多数科尔多瓦实现使用本机对话框中的此项功能，但一些平台使用浏览器的 `alert` 函数，这是通常不那么可自定义。
 
     navigator.notification.alert(message, alertCallback, [title], [buttonName])
     
 
-*   **消息**： 消息對話方塊。*（字串）*
+*   **消息**： 消息对话框。*（字符串）*
 
-*   **alertCallback**： 當警報對話方塊的被解雇時要調用的回檔。*（函數）*
+*   **alertCallback**： 当警报对话框的被解雇时要调用的回调。*（函数）*
 
-*   **標題**： 標題對話方塊。*（字串）*（可選，預設值為`Alert`)
+*   **标题**： 标题对话框。*（字符串）*（可选，默认值为`Alert`)
 
-*   **buttonName**： 按鈕名稱。*（字串）*（可選，預設值為`OK`)
+*   **buttonName**： 按钮名称。*（字符串）*（可选，默认值为`OK`)
 
 ### 示例
 
@@ -62,12 +62,12 @@
     );
     
 
-### 支援的平臺
+### 支持的平台
 
-*   亞馬遜火 OS
-*   Android 系統
+*   亚马逊火 OS
+*   Android 系统
 *   黑莓 10
-*   火狐瀏覽器作業系統
+*   火狐浏览器操作系统
 *   iOS
 *   Tizen
 *   Windows Phone 7 和 8
@@ -75,37 +75,37 @@
 
 ### Windows Phone 7 和 8 怪癖
 
-*   有沒有內置瀏覽器警報，但你可以綁定一個，如下所示調用 `alert()` 在全球範圍內：
+*   有没有内置浏览器警报，但你可以绑定一个，如下所示调用 `alert()` 在全球范围内：
     
         window.alert = navigator.notification.alert;
         
 
-*   兩個 `alert` 和 `confirm` 的非阻塞的調用，其中的結果才是可用的非同步。
+*   两个 `alert` 和 `confirm` 的非阻塞的调用，其中的结果才是可用的异步。
 
-### 火狐瀏覽器作業系統怪癖：
+### 火狐浏览器操作系统怪癖：
 
-這兩個本機阻止 `window.alert()` 和非阻塞 `navigator.notification.alert()` 可用。
+这两个本机阻止 `window.alert()` 和非阻塞 `navigator.notification.alert()` 可用。
 
 ## navigator.notification.confirm
 
-顯示一個可自訂的確認對話方塊。
+显示一个可自定义的确认对话框。
 
     navigator.notification.confirm(message, confirmCallback, [title], [buttonLabels])
     
 
-*   **消息**： 消息對話方塊。*（字串）*
+*   **消息**： 消息对话框。*（字符串）*
 
-*   **confirmCallback**: 要用索引 （1、 2 或 3） 按下的按鈕，或者在沒有按下按鈕 (0) 駁回了對話方塊中時調用的回檔。*（函數）*
+*   **confirmCallback**: 要用索引 （1、 2 或 3） 按下的按钮，或者在没有按下按钮 (0) 驳回了对话框中时调用的回调。*（函数）*
 
-*   **標題**： 標題對話方塊。*（字串）*（可選，預設值為`Confirm`)
+*   **标题**： 标题对话框。*（字符串）*（可选，默认值为`Confirm`)
 
-*   **buttonLabels**： 指定按鈕標籤的字串陣列。*（陣列）*（可選，預設值為 [ `OK,Cancel` ])
+*   **buttonLabels**： 指定按钮标签的字符串数组。*（数组）*（可选，默认值为 [ `OK,Cancel` ])
 
 ### confirmCallback
 
-`confirmCallback`當使用者按下確認對話方塊中的按鈕之一的時候執行。
+`confirmCallback`当用户按下确认对话框中的按钮之一的时候执行。
 
-回檔將參數 `buttonIndex` *（編號）*，它是按下的按鈕的索引。 請注意索引使用基於 1 的索引，所以值是 `1` ， `2` ， `3` ，等等。
+回调将参数 `buttonIndex` *（编号）*，它是按下的按钮的索引。 请注意索引使用基于 1 的索引，所以值是 `1` ， `2` ， `3` ，等等。
 
 ### 示例
 
@@ -121,12 +121,12 @@
     );
     
 
-### 支援的平臺
+### 支持的平台
 
-*   亞馬遜火 OS
-*   Android 系統
+*   亚马逊火 OS
+*   Android 系统
 *   黑莓 10
-*   火狐瀏覽器作業系統
+*   火狐浏览器操作系统
 *   iOS
 *   Tizen
 *   Windows Phone 7 和 8
@@ -134,41 +134,41 @@
 
 ### Windows Phone 7 和 8 怪癖
 
-*   有沒有內置的瀏覽器功能的 `window.confirm` ，但你可以將它綁定通過分配：
+*   有没有内置的浏览器功能的 `window.confirm` ，但你可以将它绑定通过分配：
     
         window.confirm = navigator.notification.confirm;
         
 
-*   調用到 `alert` 和 `confirm` 的非阻塞，所以結果就是只可用以非同步方式。
+*   调用到 `alert` 和 `confirm` 的非阻塞，所以结果就是只可用以异步方式。
 
-### 火狐瀏覽器作業系統怪癖：
+### 火狐浏览器操作系统怪癖：
 
-這兩個本機阻止 `window.confirm()` 和非阻塞 `navigator.notification.confirm()` 可用。
+这两个本机阻止 `window.confirm()` 和非阻塞 `navigator.notification.confirm()` 可用。
 
 ## navigator.notification.prompt
 
-顯示本機的對話方塊，更可自訂的瀏覽器比 `prompt` 函數。
+显示本机的对话框，更可自定义的浏览器比 `prompt` 函数。
 
     navigator.notification.prompt(message, promptCallback, [title], [buttonLabels], [defaultText])
     
 
-*   **消息**： 消息對話方塊。*（字串）*
+*   **消息**： 消息对话框。*（字符串）*
 
-*   **promptCallback**: 要用索引 （1、 2 或 3） 按下的按鈕，或者在沒有按下按鈕 (0) 駁回了對話方塊中時調用的回檔。*（函數）*
+*   **promptCallback**: 要用索引 （1、 2 或 3） 按下的按钮，或者在没有按下按钮 (0) 驳回了对话框中时调用的回调。*（函数）*
 
-*   **標題**： 對話方塊的標題*（字串）* （可選，預設值為`Prompt`)
+*   **标题**： 对话框的标题*（字符串）* （可选，默认值为`Prompt`)
 
-*   **buttonLabels**： 陣列，這些字串指定按鈕標籤*（陣列）* （可選，預設值為`["OK","Cancel"]`)
+*   **buttonLabels**： 数组，这些字符串指定按钮标签*（阵列）* （可选，默认值为`["OK","Cancel"]`)
 
-*   **defaultText**: 預設文字方塊中輸入值 （ `String` ） （可選，預設值: 空字串）
+*   **defaultText**: 默认文本框中输入值 （ `String` ） （可选，默认值: 空字符串）
 
 ### promptCallback
 
-`promptCallback`當使用者按下一個提示對話方塊中的按鈕時執行。`results`物件傳遞給回檔的包含以下屬性：
+`promptCallback`当用户按下一个提示对话框中的按钮时执行。`results`对象传递给回调的包含以下属性：
 
-*   **buttonIndex**： 按下的按鈕的索引。*（人數）*請注意索引使用基於 1 的索引，所以值是 `1` ， `2` ， `3` ，等等。
+*   **buttonIndex**： 按下的按钮的索引。*（人数）*请注意索引使用基于 1 的索引，所以值是 `1` ， `2` ， `3` ，等等。
 
-*   **輸入 1**： 在提示對話方塊中輸入的文本。*（字串）*
+*   **输入 1**： 在提示对话框中输入的文本。*（字符串）*
 
 ### 示例
 
@@ -185,32 +185,32 @@
     );
     
 
-### 支援的平臺
+### 支持的平台
 
-*   亞馬遜火 OS
-*   Android 系統
-*   火狐瀏覽器作業系統
+*   亚马逊火 OS
+*   Android 系统
+*   火狐浏览器操作系统
 *   iOS
 *   Windows Phone 7 和 8
 
 ### Android 的怪癖
 
-*   Android 支援最多的三個按鈕，並忽略任何更多。
+*   Android 支持最多的三个按钮，并忽略任何更多。
 
-*   關於 Android 3.0 及更高版本，使用全息主題的設備按相反的順序顯示按鈕。
+*   关于 Android 3.0 及更高版本，使用全息主题的设备按相反的顺序显示按钮。
 
-### 火狐瀏覽器作業系統怪癖：
+### 火狐浏览器操作系统怪癖：
 
-這兩個本機阻止 `window.prompt()` 和非阻塞 `navigator.notification.prompt()` 可用。
+这两个本机阻止 `window.prompt()` 和非阻塞 `navigator.notification.prompt()` 可用。
 
 ## navigator.notification.beep
 
-該設備播放提示音聲音。
+该设备播放提示音声音。
 
     navigator.notification.beep(times);
     
 
-*   **時間**： 的次數重複發出蜂鳴音。*（人數）*
+*   **时间**： 的次数重复发出蜂鸣音。*（人数）*
 
 ### 示例
 
@@ -218,30 +218,30 @@
     navigator.notification.beep(2);
     
 
-### 支援的平臺
+### 支持的平台
 
-*   亞馬遜火 OS
-*   Android 系統
+*   亚马逊火 OS
+*   Android 系统
 *   黑莓 10
 *   iOS
 *   Tizen
 *   Windows Phone 7 和 8
 *   Windows 8
 
-### 亞馬遜火 OS 怪癖
+### 亚马逊火 OS 怪癖
 
-*   亞馬遜火 OS 播放預設**設置/顯示 & 聲音**面板下指定的**通知聲音**。
+*   亚马逊火 OS 播放默认**设置/显示 & 声音**面板下指定的**通知声音**。
 
 ### Android 的怪癖
 
-*   Android 系統播放的預設**通知鈴聲****設置/聲音和顯示**面板下指定。
+*   Android 系统播放的默认**通知铃声****设置/声音和显示**面板下指定。
 
 ### Windows Phone 7 和 8 怪癖
 
-*   依賴泛型蜂鳴音檔從科爾多瓦分佈。
+*   依赖泛型蜂鸣音文件从科尔多瓦分布。
 
 ### Tizen 怪癖
 
-*   Tizen 通過播放音訊檔通過媒體 API 實現會發出蜂鳴聲。
+*   Tizen 通过播放音频文件通过媒体 API 实现会发出蜂鸣声。
 
-*   蜂鳴音檔必須很短，必須設在 `sounds` 子目錄中的應用程式的根目錄中，並且必須命名`beep.wav`.
+*   蜂鸣音文件必须很短，必须设在 `sounds` 子目录中的应用程序的根目录中，并且必须命名`beep.wav`.
